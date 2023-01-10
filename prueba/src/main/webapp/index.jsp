@@ -16,7 +16,6 @@
                         result = result.replaceAll("\t", "");
                         result = result.replaceAll("“", "\"");
                         result = result.replaceAll("”", "\"");
-                        //sessionStorage.setItem("data", result);
                         $('#datos').DataTable({
                             data: JSON.parse(result),
                             columns: [
@@ -32,10 +31,16 @@
                     }
                 });
             });
+            
+            function adicionarRegistro(){
+                window.location = "nuevo.jsp";
+            }
         </script>
     </head>
     <body>
         <h1>Listado de clientes</h1>
+        <button onclick="adicionarRegistro()">Adicionar cliente</button>
+        <br /><br />
         <table id="datos" class="display" style="width:100%">
             <thead>
                 <tr>
